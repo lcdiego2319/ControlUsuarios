@@ -25,7 +25,7 @@
 						<div class="form-group">
 							<label class="col-md-4 control-label">Contraseña</label>
 							<div class="col-md-6">
-								<input type="password" class="form-control" placefolder="Ingresa tu contraseña..." name="password">
+								<input type="password" value="invitado" class="form-control" placefolder="Ingresa tu contraseña..." name="password">
 							</div>
 						</div>
 

@@ -2,10 +2,11 @@
 
 use Illuminate\Database\Eloquent\Model;
 
-class LabelPrinter extends Model {
+class WelderRobot extends Model {
 
-	protected $table = 'labelprintertable';
-	protected $primaryKey = 'SerialNumber';
+	//
+	protected $table = 'welderrobottable';
+	protected $primaryKey = 'Transaction';
 
 	public function scopeSerialNumber($query, $serialNumber){
 		//dd("scope: ".$serialNumber);

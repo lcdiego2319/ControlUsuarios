@@ -37,6 +37,9 @@ Route::group(['prefix' => 'estaciones','middleware'=>['auth'],'namespace'=>'Esta
 	Route::resource('heatForm','HeatFormController');
 	Route::resource('labelPrinter','LabelPrinterController');
 	Route::resource('buscador','BuscadorController');
+	Route::resource('laser','LaserController');
+	Route::resource('plugAssembly','PlugAssemblyController');
+	Route::resource('welderRobot','WelderRobotController');
 });
 
 Route::post('storeSuperuser',['as'=>'storeSuperuser','uses'=>'Admin\UsuarioController@storeSuperuser']);

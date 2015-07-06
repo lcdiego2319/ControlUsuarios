@@ -19,6 +19,9 @@
 			'finalteststation4b' => 'finalteststation4b',
 			'frctionassemblydialtable'=> 'frctionassemblydialtable',
 			'heatformdialtable' => 'heatformdialtable',
-			'labelprintertable' => 'labelprintertable'
+			'labelprintertable' => 'labelprintertable',
+			'laserengravertable' => 'laserengravertable',
+			'plugassemblytable' => 'plugassemblytable',
+			'welderrobottable' => 'welderrobottable'
 			]
 		);

@@ -45,6 +45,15 @@
   <li>
     <a  href="{{ route('estaciones.labelPrinter.index') }}">Label Printer</a>
   </li>
+    <li>
+    <a  href="{{ route('estaciones.laser.index') }}">Laser</a>
+  </li>
+  <li>
+    <a  href="{{ route('estaciones.plugAssembly.index') }}">Plug Assembly</a>
+  </li>
+   <li>
+    <a  href="{{ route('estaciones.welderRobot.index') }}">Welder Robot</a>
+  </li>
   
     <hr/>
   <li>

@@ -16,6 +16,7 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
 		<script src="{{ asset('/js/eliminarUsuario.js') }}"></script>
+			<script src="{{ asset('/js/eliminarRegistro.js') }}"></script>
 		<script src="{{ asset('/js/editar.js') }}"></script>
 </head>
 <body style="background-color:white">

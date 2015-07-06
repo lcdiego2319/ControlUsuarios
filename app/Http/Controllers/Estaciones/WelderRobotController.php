@@ -2,10 +2,10 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use App\LabelPrinter as LabelPrinter;
+use App\WelderRobot as WelderRobot;
 use Illuminate\Http\Request;
 
-class LabelPrinterController extends Controller {
+class WelderRobotController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -14,8 +14,9 @@ class LabelPrinterController extends Controller {
 	 */
 	public function index(Request $request)
 	{
-		$rows = LabelPrinter::SerialNumber($request->get('SerialNumber'))->paginate(50);
-		return view('admin.estaciones.labelPrinter',compact('rows'));
+		//
+		$rows = WelderRobot::SerialNumber($request->get('SerialNumber'))->paginate(50);
+		return view('admin.estaciones.welderRobot',compact('rows'));
 	}
 
 	/**
@@ -77,20 +78,9 @@ class LabelPrinterController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id, Request $request)
+	public function destroy($id)
 	{
 		//
-		$label = LabelPrinter::findOrFail($id);
-		$label->delete();
-		$message = $label->SerialNumber.' fue eliminado.';
-		if($request->ajax()){
-			return response()->json([
-				'id' => $label->SerialNumber,
-				'message' => $message
-			]);
-		}
-		return redirect()->route('estaciones.labelPrinter.index');
-		//dd("entro al controlador");
 	}
 
 }

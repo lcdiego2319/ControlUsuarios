@@ -66,7 +66,15 @@ class BuscadorController extends Controller {
 		  if($estacion == 'labelprintertable'){
 		 	return view('admin.estaciones.labelPrinter',compact('rows'));
 		 }
-
+		   if($estacion == 'laserengravertable'){
+		 	return view('admin.estaciones.laser',compact('rows'));
+		 }
+ if($estacion == 'plugassemblytable'){
+		 	return view('admin.estaciones.plugAssembly',compact('rows'));
+		 }
+		 if($estacion == 'welderrobottable'){
+		 	return view('admin.estaciones.welderRobot',compact('rows'));
+		 }
 
 		 //dd($calibration);
 	}
