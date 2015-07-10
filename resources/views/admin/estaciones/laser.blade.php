@@ -56,7 +56,7 @@
                 <td>{{$item->Result2}}</td>
                 <td>{{$item->ErrorNumber}}</td>   
                  <td>
-                  <button type="button" class="btn-alert btn btn-danger btn-xs"  data-id="{{  $item->Transaction}}"  href ="" ><span  class="glyphicon glyphicon-trash" aria-hidden="true"></span>Eliminar
+                  <button type="button" class="btn-alert btn btn-danger btn-xs"  data-id="{{  $item->Transaction}}"  href ="" ><span  class="glyphicon glyphicon-trash" aria-hidden="true"></span>
                   </button>
                 </td>           
   						</tr>
@@ -83,6 +83,7 @@
 </div>
     </div>
   </div>
+  @include('admin.usuario.secciones.login');
 </div>
 {!!Form::open(['route' => ['estaciones.laser.destroy',':SERIAL_ID'],'method' => 'DELETE', 'id'=>'form-eliminar'])!!}
 {!!Form::close()!!}

@@ -53,9 +53,10 @@
                 <th>FinalTestStation4Status</th>
                 <th>Date............</th>
                 <th>FinalTestStation4bStatus</th>
+                <th>Acciones</th>
   						</tr>
   						@foreach($rows as $item)
-  						<tr >
+  						<tr  data-id="{{ $item->SerialNumber}}">
   						
   							<td>{{$item->SerialNumber}}</td>
   							<td>{{$item->FrictionAssemblyDialStatus}}</td>
@@ -72,7 +73,10 @@
                 <td>{{$item->FinalTestStation4aStatus}}</td>
                 <td>{{$item->Date}}</td>
                 <td>{{$item->FinalTestStation4bStatus}}</td>
-
+                <td>
+                  <button type="button" class="btn-alert btn btn-danger btn-xs"  data-id="{{  $item->SerialNumber}}"  href ="" ><span  class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                  </button>
+                </td> 
   						</tr>
   						@endforeach
 					</table>
@@ -83,8 +87,27 @@
           {!!$rows->setPath('')->render()!!}
     </div>
   </div>
-  <footer style="background-color:#FFBF00;border-bottom:5px solid #222; text-align:center; color:black;">
-  <p>Quality Software 2015 Continental</p>
-</footer>
+
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Eliminar registro</h4>
+      </div>
+      <div class="modal-body">
+        Estas seguro que deseas eliminar el registro: <span id="SerialNumber" ></span>?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+        <button type="button" class="btn-eliminar btn btn-primary">Si</button>
+      </div>
+    </div>
+  </div>
 </div>
+
+@include('admin.usuario.secciones.login');
+  
+</div>
+{!!Form::open(['route' => ['estaciones.bodystatus.destroy',':SERIAL_ID'],'method' => 'DELETE', 'id'=>'form-eliminar'])!!}
+{!!Form::close()!!}
 @endsection

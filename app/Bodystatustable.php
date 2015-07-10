@@ -23,11 +23,16 @@ class Bodystatustable extends Model {
 							'FinalTestStation4bStatus'
 						];
 
+	protected $primaryKey = 'SerialNumber';
 
 	public function scopeSerialNumber($query, $serialNumber){
 		//dd("scope: ".$serialNumber);
 		if(trim($serialNumber) != ""){
 			$query -> where('SerialNumber',"LIKE","%$serialNumber%");
 		}
+	}
+
+		public function scopeTableName(){
+		return $this->getTable();
 	}
 }

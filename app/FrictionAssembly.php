@@ -14,5 +14,7 @@ class FrictionAssembly extends Model {
 		}
 	}
 
-
+	public function scopeTableName(){
+		return $this->getTable();
+	}
 }

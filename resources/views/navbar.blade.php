@@ -10,16 +10,18 @@
 	<link href="{{ asset('/css/bootstrap-editable.css') }}" rel="stylesheet">
 	<link href="{{ asset('/css/sidebar.css') }}" rel="stylesheet">
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
-	<link href="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet"/>
 	
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
+	
+	<script src="{{ asset('/js/jquery-2.1.4.min.js') }}"></script>
+	<script src="{{ asset('/js/bootstrap.min.js') }}"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
-		<script src="{{ asset('/js/eliminarUsuario.js') }}"></script>
-			<script src="{{ asset('/js/eliminarRegistro.js') }}"></script>
-		<script src="{{ asset('/js/editar.js') }}"></script>
+	<script src="{{ asset('/js/qis.js') }}"></script>
+	<script src="{{ asset('/js/eliminarUsuario.js') }}"></script>
+    <script src="{{ asset('/js/eliminarRegistro.js') }}"></script>
+	<script src="{{ asset('/js/editar.js') }}"></script>
+
 </head>
-<body style="background-color:white">
+<body style="background-color:#F2F2F2">
 	<div class="container-fluid" style="z-index:100; position:absolute; top:-10px">
 	<div class="row" style="background-color: #FFBF00;">
 		<div class="col-md-4">

@@ -53,5 +53,9 @@ use Authenticatable, CanResetPassword;
 		}
 	}
 
+	public function scopeTableName(){
+		return $this->getTable();
+	}
+
 
 }

@@ -4,9 +4,12 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Laser as Laser;
 use Illuminate\Http\Request;
-
+use Auth;
+use App\Historial as Historial;
 class LaserController extends Controller {
-
+	public function __construct(){
+		$this->middleware('isAdmin', ['only' => ['destroy']]);
+	}
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -83,6 +86,16 @@ class LaserController extends Controller {
 		$laser= Laser::findOrFail($id);
 		$laser->delete();
 		$message = $laser->SerialNumber.' fue eliminado.';
+
+		$tableName = Laser::TableName();
+		if (Auth::user())
+        {
+        	$currentUser = Auth::user();
+			$historial = Historial::create(['usuario'=>$currentUser->usuario,'anterior'=>$object->SerialNumber,'nuevo'=>'Eliminado','campo'=>'Todos','tabla'=>$tableName]);
+        }else{
+        	dd("no hay iniciada sesion");
+        }
+
 		if($request->ajax()){
 			return response()->json([
 				'id' => $laser->SerialNumber,

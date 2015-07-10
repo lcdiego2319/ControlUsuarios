@@ -4,9 +4,14 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Bodystatustable as Bodystatus;
 use Illuminate\Http\Request;
+use App\Historial as Historial;
 use Illuminate\Support\Facades\Session;
+use Auth;
 class BodystatustableController extends Controller {
 
+	public function __construct(){
+		$this->middleware('isAdmin', ['only' => ['destroy']]);
+	}
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -82,9 +87,27 @@ class BodystatustableController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function destroy($id,Request $request)
 	{
-		//
+		$object= Bodystatus::findOrFail($id);
+		$object->delete();
+		$message = $object->SerialNumber.' fue eliminado.';
+		$tableName = Bodystatus::TableName();
+		if (Auth::user())
+        {
+        	$currentUser = Auth::user();
+			$historial = Historial::create(['usuario'=>$currentUser->usuario,'anterior'=>$object->SerialNumber,'nuevo'=>'Eliminado','campo'=>'Todos','tabla'=>$tableName]);
+        }else{
+        	dd("no hay iniciada sesion");
+        }
+
+		if($request->ajax()){
+			return response()->json([
+				'id' => $object->SerialNumber,
+				'message' => $message
+			]);
+		}
+		return redirect()->route('estaciones.bodystatus.index');
 	}
 
 }

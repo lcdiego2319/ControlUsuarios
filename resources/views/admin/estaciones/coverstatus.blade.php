@@ -45,7 +45,7 @@
                 <th>CantileverStatus</th>
               
   							<th>Date</th>
-                
+                 <th>Acciones</th>
   						</tr>
   						@foreach($rows as $item)
   						<tr data-id="{{ $item->Transaction}}">
@@ -56,17 +56,38 @@
                 <td>{{$item->CantileverStatus}}</td>
                 
                 <td>{{$item->Date}}</td>
-                
+                 <td>
+                 
+                  <button type="button" class="btn-alert btn btn-danger btn-xs"  data-id="{{  $item->SerialNumber}}"  href ="" ><span  class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                  </button>
+                </td>
   						</tr>
   						@endforeach
 					</table>
           {!!$rows->setPath('')->render()!!}
         </div>
       </div>
-      
+         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Eliminar registro</h4>
+      </div>
+      <div class="modal-body">
+        Estas seguro que deseas eliminar el registro: <span id="SerialNumber" ></span>?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+        <button type="button" class="btn-eliminar btn btn-primary">Si</button>
+      </div>
     </div>
   </div>
 </div>
-
+    </div>
+  </div>
+  @include('admin.usuario.secciones.login');
+</div>
+{!!Form::open(['route' => ['estaciones.coverstatus.destroy',':SERIAL_ID'],'method' => 'DELETE', 'id'=>'form-eliminar'])!!}
+{!!Form::close()!!}
 
 @endsection

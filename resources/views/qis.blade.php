@@ -32,7 +32,7 @@
 				</tr>
 			</table>
 		</div>
-	
+	<button type="button" id="BtnAdd" clas="btn btn-primary">Anadir</button>
 		<div class="col-md-4">
 		</div>
 				
@@ -58,7 +58,7 @@
 
 	<div class="row">
 		<div class="col-md-12">
-			<table style="border: 2px solid black;"  class="table table-bordered">
+			<table style="border: 2px solid black;"  id="qis"class="table table-bordered">
 			<tr style="border: 2px solid black;" >
 				<th>MEDICIONES</th>
 				<th >Hora o Fecha</th>
@@ -366,7 +366,7 @@
 				<td></td>
 				<td></td>
 				<td></td>
-				<td></td>				
+				<td><button type='button' id='BtnDelete' class='btn btn-primary'>Eliminar</button></td>				
 			</tr>
 
 		</table>

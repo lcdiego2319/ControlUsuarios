@@ -11,7 +11,7 @@
           <b>Conformal Table</b>
         <hr/>
 
-     
+    
           <div class="row">
             <div class="col-md-12">
               {!! Form::model(Request::all(),['route'=>'estaciones.conformal.index', 'method'=>'GET', 'class'=>'form-group','role'=>'search'])!!}
@@ -63,17 +63,37 @@
                 <td>{{$item->Result2}}</td>
                 <td> {{$item->Estacion}}</td>
                 <td> {{$item->ErrorNumber}}</td>
-                
+                <td>
+                  <button type="button" class="btn-alert btn btn-danger btn-xs"  data-id="{{  $item->Transaction}}"  href ="" ><span  class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                  </button>
+                </td>
   						</tr>
   						@endforeach
 					</table>
           {!!$rows->setPath('')->render()!!}
         </div>
       </div>
-      
+         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel">Eliminar registro</h4>
+      </div>
+      <div class="modal-body">
+        Estas seguro que deseas eliminar el registro: <span id="SerialNumber" ></span>?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+        <button type="button" class="btn-eliminar btn btn-primary">Si</button>
+      </div>
     </div>
   </div>
 </div>
-
+    </div>
+  </div>
+  @include('admin.usuario.secciones.login');
+</div>
+{!!Form::open(['route' => ['estaciones.conformal.destroy',':SERIAL_ID'],'method' => 'DELETE', 'id'=>'form-eliminar'])!!}
+{!!Form::close()!!}
 
 @endsection

@@ -19,17 +19,18 @@ private $auth;
 	{
 		//dd('is admin');
 		if($this->auth->user()->tipo !='admin'){
-		//	dd("eres adminstrador");
+			
 			
 			//return response('Unauthorized.', 401);
 			//$this->auth->logout();
 			if ($request->ajax())
 			{
+				
 				return response('Unauthorized.', 401);
 			}
 			else
 			{
-				return \Redirect::route('administrador.calibration.index');
+				return view('main');
 			}
 		}
 		return $next($request);

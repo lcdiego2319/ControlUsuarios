@@ -4,9 +4,12 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\FrictionAssembly as FrictionAssembly;
 use Illuminate\Http\Request;
-
+use Auth;
+use App\Historial as Historial;
 class FrictionAssemblyController extends Controller {
-
+	public function __construct(){
+		$this->middleware('isAdmin', ['only' => ['destroy']]);
+	}
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -78,9 +81,28 @@ class FrictionAssemblyController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
+		public function destroy($id, Request $request)
 	{
-		//
+		$object= FrictionAssembly::findOrFail($id);
+		$object->delete();
+		$message = $object->SerialNumber.' fue eliminado.';
+	$tableName = FrictionAssembly::TableName();
+		if (Auth::user())
+        {
+        	$currentUser = Auth::user();
+			$historial = Historial::create(['usuario'=>$currentUser->usuario,'anterior'=>$object->SerialNumber,'nuevo'=>'Eliminado','campo'=>'Todos','tabla'=>$tableName]);
+        }else{
+        	dd("no hay iniciada sesion");
+        }
+
+
+		if($request->ajax()){
+			return response()->json([
+				'id' => $object->SerialNumber,
+				'message' => $message
+			]);
+		}
+		return redirect()->route('estaciones.friction.index');
 	}
 
 }

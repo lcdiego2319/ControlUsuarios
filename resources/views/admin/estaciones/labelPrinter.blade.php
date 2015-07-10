@@ -88,6 +88,7 @@
 </div>
     </div>
   </div>
+  @include('admin.usuario.secciones.login');
 </div>
 
 {!!Form::open(['route' => ['estaciones.labelPrinter.destroy',':SERIAL_ID'],'method' => 'DELETE', 'id'=>'form-eliminar'])!!}

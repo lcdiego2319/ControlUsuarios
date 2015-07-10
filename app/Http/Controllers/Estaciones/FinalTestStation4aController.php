@@ -4,9 +4,12 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\FinalTestStation4a as FinalTestStation4a;
 use Illuminate\Http\Request;
-
+use Auth;
+use App\Historial as Historial;
 class FinalTestStation4aController extends Controller {
-
+	public function __construct(){
+		$this->middleware('isAdmin', ['only' => ['destroy']]);
+	}
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -77,9 +80,27 @@ class FinalTestStation4aController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
+		public function destroy($id, Request $request)
 	{
-		//
+		$object= FinalTestStation4a::findOrFail($id);
+		$object->delete();
+		$message = $object->SerialNumber.' fue eliminado.';
+		$tableName = FinalTestStation4a::TableName();
+		if (Auth::user())
+        {
+        	$currentUser = Auth::user();
+			$historial = Historial::create(['usuario'=>$currentUser->usuario,'anterior'=>$object->SerialNumber,'nuevo'=>'Eliminado','campo'=>'Todos','tabla'=>$tableName]);
+        }else{
+        	dd("no hay iniciada sesion");
+        }
+
+		if($request->ajax()){
+			return response()->json([
+				'id' => $object->SerialNumber,
+				'message' => $message
+			]);
+		}
+		return redirect()->route('estaciones.finalTestStation4a.index');
 	}
 
 }

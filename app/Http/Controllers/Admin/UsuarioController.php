@@ -149,10 +149,11 @@ class UsuarioController extends Controller {
 	{
 		$usuario = Usuario::findOrFail($request->id);
 		$columna = $request->columna;
+		$tableName = Usuario::TableName();
 		if (Auth::user())
         {
         	$currentUser = Auth::user();
-			$historial = Historial::create(['id_usuario'=>$currentUser->id,'anterior'=>$usuario->$columna,'nuevo'=>$request->valor,'campo'=>$request->columna]);
+			$historial = Historial::create(['usuario'=>$currentUser->id,'anterior'=>$usuario->$columna,'nuevo'=>$request->valor,'campo'=>$request->columna,'tabla'=>$tableName]);
         }else{
         	dd("no hay iniciada sesion");
         }

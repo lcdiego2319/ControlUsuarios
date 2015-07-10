@@ -79,6 +79,7 @@ $('tr #rowCalibration').dblclick(function(e) {
       e.preventDefault();
       var row = $(this).parents('tr');
       var id = row.data('id');
+    // alert(row);
       var form = $('#form-detele');
       var url = form.attr('action').replace(':USER_ID',id);
       var data = form.serialize();

@@ -14,5 +14,7 @@ class FinalTestStation4b extends Model {
 		}
 	}
 	//
-
+	public function scopeTableName(){
+		return $this->getTable();
+	}
 }

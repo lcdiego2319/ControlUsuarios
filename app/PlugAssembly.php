@@ -14,5 +14,7 @@ class PlugAssembly extends Model {
 			$query -> where('SerialNumber',"LIKE","%$serialNumber%");
 		}
 	}
-
+		public function scopeTableName(){
+		return $this->getTable();
+	}
 }

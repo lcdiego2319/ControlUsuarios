@@ -5,9 +5,12 @@ use App\Http\Controllers\Controller;
 use App\Cantilever as Cantilever;
 use Auth;
 use Illuminate\Http\Request;
-
+use App\Historial as Historial;
 class CantileverController extends Controller {
 
+	public function __construct(){
+		$this->middleware('isAdmin', ['only' => ['destroy']]);
+	}
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -85,9 +88,28 @@ class CantileverController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
+	public function destroy($id, Request $request)
 	{
-		//
+		$objet= Cantilever::findOrFail($id);
+		$objet->delete();
+		$message = $objet->SerialNumber.' fue eliminado.';
+
+		$tableName = Cantilever::TableName();
+		if (Auth::user())
+        {
+        	$currentUser = Auth::user();
+			$historial = Historial::create(['usuario'=>$currentUser->usuario,'anterior'=>$object->SerialNumber,'nuevo'=>'Eliminado','campo'=>'Todos','tabla'=>$tableName]);
+        }else{
+        	dd("no hay iniciada sesion");
+        }
+
+		if($request->ajax()){
+			return response()->json([
+				'id' => $objeto->SerialNumber,
+				'message' => $message
+			]);
+		}
+		return redirect()->route('estaciones.cantilever.index');
 	}
 
 }

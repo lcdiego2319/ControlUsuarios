@@ -4,9 +4,12 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\LabelPrinter as LabelPrinter;
 use Illuminate\Http\Request;
-
+use Auth;
+use App\Historial as Historial;
 class LabelPrinterController extends Controller {
-
+	public function __construct(){
+		$this->middleware('isAdmin', ['only' => ['destroy']]);
+	}
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -83,6 +86,17 @@ class LabelPrinterController extends Controller {
 		$label = LabelPrinter::findOrFail($id);
 		$label->delete();
 		$message = $label->SerialNumber.' fue eliminado.';
+
+		$tableName = LabelPrinter::TableName();
+		if (Auth::user())
+        {
+        	$currentUser = Auth::user();
+			$historial = Historial::create(['usuario'=>$currentUser->usuario,'anterior'=>$object->SerialNumber,'nuevo'=>'Eliminado','campo'=>'Todos','tabla'=>$tableName]);
+        }else{
+        	dd("no hay iniciada sesion");
+        }
+
+
 		if($request->ajax()){
 			return response()->json([
 				'id' => $label->SerialNumber,

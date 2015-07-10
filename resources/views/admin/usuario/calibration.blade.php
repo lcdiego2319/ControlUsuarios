@@ -1,13 +1,13 @@
 @extends('navbar')
 @section('content')
-<div class="container-fluid">
+<div class="container-fluid"   style="background-color:#F2F2F2">
   <div class="row">
     <div class="col-md-2 ">
        @include('admin.usuario.secciones.sidebar2')
     </div>
     <div class="col-md-10 ">
-      <div class="panel "  >
-        <div class="panel-heading" style="font-size:18px">
+      <div class="panel "   >
+        <div class="panel-heading" style="font-size:18px ">
         <b>Calibration Table</b>
         <hr/>
      
@@ -69,9 +69,7 @@
                   <a  class="myeditable" href="#" id="_token" data-type="text" data-pk="1" data-name="_token"  data-original-title="Ingresa nombre" style="display:none">{{ csrf_token() }}</a>
                   <a style="color:black;" class="myeditable" href="#" id="nombre" data-type="text" data-pk="1" data-name="ErrorNumber"  data-id="{{$item->ErrorNumber}}"data-original-title="Ingresa nombre">  {{$item->ErrorNumber}}</a>
                   <button data-id="{{ $item->Transaction}}"   type="button" class="btn btn-default  btn-xs"> <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button></td>
-                <td id="rowCalibration" data-id="{{ $item->Transaction}}"> <a  class="myeditable" href="#" id="_token" data-type="text" data-pk="1" data-name="_token"  data-original-title="Ingresa nombre" style="display:none">{{ csrf_token() }}</a>
-                  <a style="color:black;" class="myeditable" href="#" id="nombre" data-type="text" data-pk="1" data-name="SwVersion"  data-id="{{$item->SwVersion}}"data-original-title="Ingresa nombre">  {{$item->SwVersion}}</a>
-                  <button data-id="{{ $item->Transaction}}"   type="button" class="btn btn-default  btn-xs"> <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span></button></td>            
+                <td>  {{$item->SwVersion}}</td>            
   						</tr>
   						@endforeach
 					</table>
