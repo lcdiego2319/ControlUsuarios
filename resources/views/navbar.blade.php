@@ -19,7 +19,7 @@
 	<script src="{{ asset('/js/eliminarUsuario.js') }}"></script>
     <script src="{{ asset('/js/eliminarRegistro.js') }}"></script>
 	<script src="{{ asset('/js/editar.js') }}"></script>
-
+<title>Interlocking</title>
 </head>
 <body style="background-color:#F2F2F2">
 	<div class="container-fluid" style="z-index:100; position:absolute; top:-10px">
@@ -37,7 +37,7 @@
     
     		<div class="navbar-header ">
     			<a class="navbar-brand" href="{{ url('goMain') }}" >
-        		<span style="color:#FFBF00;">.........................................................................................................................</span><span style="color:black;"><b>LINEA NVLD-BMW</b></span>
+        		<span style="color:#FFBF00;">.........................................................................................................................</span><span style="color:black;"><b>NVLD - Linea 1</b></span>
       			</a>
  			</div>
       		
