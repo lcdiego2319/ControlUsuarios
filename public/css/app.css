@@ -173,6 +173,9 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+.borderless td, .borderless th {
+    border: none;
+}
 td,
 th {
   padding: 0;

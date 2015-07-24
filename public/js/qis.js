@@ -23,21 +23,23 @@ function createCell(cell,indice,tipo)
 
 	if(indice == 0)//Si es la primera celda creada debera contar con el id que se active en jquery para mostrar el modal.
 	{
-		if(tipo == 1)
+		if(tipo == 1)//si es una nueva columna
 		{
 			cell.id = "tableModal";
-			cell.appendChild(btn);	
+			cell.appendChild(txt);	
+			cell.className = "warning";
 		}
-		else
+		else//si es una nueva fila
 		{
 			cell.id = "tableRowClick";
-			cell.appendChild(btn);	
+			cell.appendChild(txt);
+			cell.className = "warning";	
 		}
 	}
 	else
 	{
 
-	cell.appendChild(btn);
+	cell.appendChild(txt);
 	cell.className = "item";
 		
 	}
@@ -123,16 +125,23 @@ function deleteColumn(i){
 		tb1.rows[x].deleteCell(i);
 	}
 }
-/**/
-function firstRow()
-{
-
+/*FUNCTION: Para eliminar la ultima columna*/
+function deleteLastColumn(){
 	var tb1 = document.getElementById('qis');
-	var row = tb1.insertRow(0);
-	var i = 0;
-	for(i = 0; i < tb1.rows[1].cells.length; i++)//conocer cuantas celdas hay en los renglones para añadirlos al nuevo renglon.
+	var lastCol = tb1.rows[0].cells.length;
+	
+	for(x = 0; x < tb1.rows.length; x++)
 	{
-		createCell(row.insertCell(i),i);
+		tb1.rows[x].deleteCell(lastCol - 1);
 	}
+}
+/**/
+
+/*FUNCTION: Para eliminar la ultima fila*/
+function deleteLastRow(){
+	var tb1 = document.getElementById('qis');
+	var lastRow = tb1.rows.length;
+
+	tb1.deleteRow(lastRow - 1);
 }
 

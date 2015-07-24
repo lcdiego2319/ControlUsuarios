@@ -9,15 +9,14 @@
 	<link href="{{ asset('/css/simple-sidebar.css') }}" rel="stylesheet">
 	<link href="{{ asset('/css/bootstrap-editable.css') }}" rel="stylesheet">
 	<link href="{{ asset('/css/sidebar.css') }}" rel="stylesheet">
-	<link href="{{ asset('/css/jquery-ui.css') }}" rel="stylesheet">
+	
 	<link href='//fonts.googleapis.com/css?family=Roboto:400,300' rel='stylesheet' type='text/css'>
 	
 	
 	<script src="{{ asset('/js/jquery-2.1.4.min.js') }}"></script>
 	<script src="{{ asset('/js/bootstrap.min.js') }}"></script>
-		<script src="{{ asset('/js/jquery-ui.min.js') }}"></script>
-	<script src="{{ asset('/js/qis.js') }}"></script>
-			<script src="{{ asset('/js/selectable.js') }}"></script>
+	
+	
 	<script src="//cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.0/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
 	<script src="{{ asset('/js/eliminarUsuario.js') }}"></script>
     <script src="{{ asset('/js/eliminarRegistro.js') }}"></script>

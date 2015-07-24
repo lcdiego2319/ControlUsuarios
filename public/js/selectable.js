@@ -1,13 +1,19 @@
 $(document).ready(function(){
 	 /*FUNCTION: Para activar la funcion storable que permite el movimiendo de rows en la tabla, 
 	 no es posible utilizarlo sin desactivar la funcion selectable.*/
+	  
 $('tbody').sortable();
 	$('#btnEnableStorable').on("click",function(e){
+		$('#btnEnableStorable').css("background-color","#5cb85c");
+		$("#btnEnableSelectable").css("background-color","#d9534f");
+
 		$('tbody').sortable("enable");
 	 	$("#qis").selectable("disable");
 	});
 
 	$("#btnEnableSelectable").on("click",function(e){
+		$('#btnEnableStorable').css("background-color","#d9534f");
+		$("#btnEnableSelectable").css("background-color","#5cb85c");
 		$('tbody').sortable("disable");
 	 	$("#qis").selectable("enable");
 	});
@@ -67,17 +73,17 @@ $('tbody').sortable();
 		}//end else
 	});
 /*FUNCION: Para abrir un model el cual permite añadir al usuario nuevas columnas*/
-	$(document).on("click","#tableModal",function(){
+	$(document).on("dblclick","#tableModal",function(){
 
 		var indice = $(this).index();
-		$('#btnLeftCol').html(indice);
+		
 		$("#btnLeftCol").attr("onclick","appendColumnLast("+indice+")");//La funcion que se le añade al boton, se encuentra en el archivo qis.js en javascript vanilla.
 		$("#btnRightCol").attr("onclick","appendColumnNext("+indice+")");
 		$("#btnDeleteCol").attr("onclick","deleteColumn("+indice+")");
 		$('#tableColModal').modal('show');
 	});
 
-	$(document).on("click","#tableRowClick",function(){
+	$(document).on("dblclick","#tableRowClick",function(){
 		var indice = $(this).parents().index();//seleccionar el tr para conocer la ubicacion de la fila seleccionada por el usuario.
 		$("#btnUpRow").attr("onclick","appendUpRow("+indice+")");	
 		$("#btnDownRow").attr("onclick","appendDownRow("+indice+")");
