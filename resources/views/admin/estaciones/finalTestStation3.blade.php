@@ -47,7 +47,7 @@
                 <th>KTRemainingVacuum</th>
                 <th>ErrorNumber</th>
                 <th>Estacion</th>
-                 <th>Acciones</th>
+                 
                 
   						</tr>
   						@foreach($rows as $item)
@@ -61,10 +61,7 @@
                 <td>{{$item->KTRemainingVacum}}</td>
                 <td>{{$item->ErrorNumber}}</td>
                 <td>{{$item->Estacion}}</td>
-                 <td>
-                  <button type="button" class="btn-alert btn btn-danger btn-xs"  data-id="{{  $item->Transaction}}"  href ="" ><span  class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-                  </button>
-                </td>                
+                              
   						</tr>
   						@endforeach
 					</table>

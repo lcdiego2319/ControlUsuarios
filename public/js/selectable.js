@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	 /*FUNCTION: Para activar la funcion storable que permite el movimiendo de rows en la tabla, 
 	 no es posible utilizarlo sin desactivar la funcion selectable.*/
-	  
+	  $('.myeditable').editable();
 $('tbody').sortable();
 	$('#btnEnableStorable').on("click",function(e){
 		$('#btnEnableStorable').css("background-color","#5cb85c");

@@ -25,7 +25,7 @@
 						<div class="form-group">
 							<label class="col-md-4 control-label">Contraseña</label>
 							<div class="col-md-6">
-								<input type="password" value="invitado" class="form-control" placefolder="Ingresa tu contraseña..." name="password">
+								<input type="password"  class="form-control" placefolder="Ingresa tu contraseña..." name="password">
 							</div>
 						</div>
 
@@ -35,7 +35,7 @@
 							<div class="col-md-6 col-md-offset-4">
 								<button type="submit" class="btn btn-warning btn-block">Ingresar</button>
 
-								<a class="btn btn-link" href="{{ url('/createSuperuser') }}">Solo personal autorizado.</a>
+								
 							</div>
 						</div>
 					</form>

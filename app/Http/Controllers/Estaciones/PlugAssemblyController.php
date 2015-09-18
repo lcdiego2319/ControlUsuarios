@@ -4,7 +4,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\PlugAssembly;
 use Illuminate\Http\Request;
-use Auth
+use Auth;
 use App\Historial as Historial;
 class PlugAssemblyController extends Controller {
 	public function __construct(){

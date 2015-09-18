@@ -36,7 +36,7 @@
 			<table class="table" >
 				<tr>
 					<td style="border:none">#PARTE:</td>
-					<td style="border:none"> {!! Form::text('SerialNumber',null, ['class'=>'form-control','placeholder'=>'#Parte...']) !!}</td>
+					<td style="border:none"> <input type="text" class="form-control" >{!! Form::text('SerialNumber',null, ['class'=>'form-control','placeholder'=>'#Parte...']) !!}</td>
 				</tr>
 				<tr>
 					<td style="border:none">PRODUCTO:</td>
@@ -102,16 +102,17 @@
 				<table  id="qis" class="table table-bordered  table-hover">
 					<tbody>
 				<tr >
-					<th class="warning" id="tableModal">MEDICIONES</th>
-					<th class="warning" id="tableModal">Hora o Fecha</th>
-					<th class="warning" id="tableModal">Hora o Fecha</th>
-					<th class="warning" id="tableModal">Hora o Fecha</th>
-					<th class="warning" id="tableModal">Hora o Fecha</th>
-					<th class="warning" id="tableModal">Hora o Fecha</th>
-					<th class="warning" id="tableModal">PLAN DE REACCION</th>
+					<th class="warning" id="tableModal"> <a style="color:black;" class="myeditable"  data-pk="1"  data-original-title="Cambiar titulo">MEDICIONES</a></th>
+					<th class="warning" id="tableModal"> <a style="color:black;" class="myeditable"  data-pk="1"  data-original-title="Cambiar titulo">Hora o Fecha</a></th>
+					<th class="warning" id="tableModal"> <a style="color:black;" class="myeditable"  data-pk="1"  data-original-title="Cambiar titulo">Hora o Fecha</a></th>
+					<th class="warning" id="tableModal"> <a style="color:black;" class="myeditable"  data-pk="1"  data-original-title="Cambiar titulo">Hora o Fecha</a></th>
+					<th class="warning" id="tableModal"> <a style="color:black;" class="myeditable"  data-pk="1"  data-original-title="Cambiar titulo">Hora o Fecha</a></th>
+					<th class="warning" id="tableModal"> <a style="color:black;" class="myeditable"  data-pk="1"  data-original-title="Cambiar titulo">Hora o Fecha</a></th>
+					
+					<th class="warning" id="tableModal"><a style="color:black;" class="myeditable"  data-pk="1"  data-original-title="Cambiar titulo">PLAN DE REACCION</a></th>
 				</tr>
 					<tr>
-					<td class="warning" id="tableRowClick" class="item">1a. PIEZA:</td>
+					<td class="warning" id="tableRowClick" class="item"> <a style="color:black;" class="myeditable"  data-pk="1"  data-original-title="Cambiar titulo">1a. PIEZA:</a></td>
 					<td class="item"></td>
 					<td class="item"></td>
 					<td class="item"></td>
@@ -120,7 +121,7 @@
 					<td class="item"></td>
 				</tr>
 				<tr>
-					<td class="warning" id="tableRowClick" class="item">CARACT:</td>
+					<td class="warning" id="tableRowClick" class="item"> <a style="color:black;" class="myeditable"  data-pk="1"  data-original-title="Cambiar titulo">CARACT:</a></td>
 					<td class="item"></td>
 					<td class="item"></td>
 					<td class="item"></td>
@@ -129,7 +130,7 @@
 					<td class="item"></td>				
 				</tr>
 				<tr>
-					<td  class="warning" id="tableRowClick" class="item"> ESPEC:</td>
+					<td  class="warning" id="tableRowClick" class="item"> <a style="color:black;" class="myeditable"  data-pk="1"  data-original-title="Cambiar titulo"> ESPEC:</a></td>
 					<td class="item"></td>
 					<td class="item"></td>
 					<td class="item"></td>
@@ -138,7 +139,7 @@
 					<td class="item"></td>				
 				</tr>
 				<tr>
-					<td class="warning" id="tableRowClick" class="item">METODO:</td>
+					<td class="warning" id="tableRowClick" class="item"> <a style="color:black;" class="myeditable"  data-pk="1"  data-original-title="Cambiar titulo">METODO:</a></td>
 					<td class="item"></td>
 					<td class="item"></td>
 					<td class="item"></td>
@@ -147,7 +148,7 @@
 					<td class="item"></td>				
 				</tr>
 				<tr>
-					<td class="warning" id="tableRowClick" class="item">FREC:</td>
+					<td class="warning" id="tableRowClick" class="item"> <a style="color:black;" class="myeditable"  data-pk="1"  data-original-title="Cambiar titulo">FREC:</a></td>
 					<td class="item"></td>
 					<td class="item"></td>
 					<td class="item"></td>
@@ -156,145 +157,7 @@
 					<td class="item"></td>				
 				</tr>
 
-					<tr>
-					<td class="warning" id="tableRowClick" class="item">1a. PIEZA:</td>
-					<td class="item"></td>
-					<td class="item"></td>
-					<td class="item"></td>
-					<td class="item"></td>
-					<td class="item"></td>
-					<td class="item"></td>
-					
-				</tr>
-				<tr>
-					<td class="warning" id="tableRowClick" class="item">CARACT:</td>
-					<td class="item"></td>
-					<td class="item"></td>
-					<td class="item"></td>
-					<td class="item"></td>
-					<td class="item"></td>
-					<td class="item"></td>				
-				</tr>
-				<tr>
-					<td  class="warning" id="tableRowClick" class="item"> ESPEC:</td>
-					<td class="item"></td>
-					<td class="item"></td>
-					<td class="item"></td>
-					<td class="item"></td>
-					<td class="item"></td>
-					<td class="item"></td>				
-				</tr>
-				<tr>
-					<td class="warning" class="item">METODO:</td>
-					<td class="item"></td>
-					<td class="item"></td>
-					<td class="item"></td>
-					<td class="item"></td>
-					<td class="item" ></td>
-					<td class="item"></td>				
-				</tr>
-				<tr>
-					<td  class="warning" id="tableRowClick" class="item">FREC:</td>
-					<td class="item"></td>
-					<td class="item"></td>
-					<td class="item"></td>
-					<td class="item"></td>
-					<td class="item"></td>
-					<td class="item"></td>				
-				</tr>
-				<tr>
-					<td class="warning" id="tableRowClick" class="item">1a. PIEZA:</td>
-					<td class="item"></td>
-					<td class="item"></td>
-					<td class="item"></td>
-					<td class="item"></td>
-					<td class="item"></td>
-					<td class="item"></td>
-					
-				</tr>
-				<tr>
-					<td class="warning" id="tableRowClick" class="item">CARACT:</td>
-					<td class="item"></td>
-					<td class="item"></td>
-					<td class="item"></td>
-					<td class="item"></td>
-					<td class="item"></td>
-					<td class="item"></td>				
-				</tr>
-				<tr>
-					<td  class="warning" id="tableRowClick" class="item"> ESPEC:</td>
-					<td class="item"></td>
-					<td class="item"></td>
-					<td class="item"></td>
-					<td class="item"></td>
-					<td class="item"></td>
-					<td class="item"></td>				
-				</tr>
-				<tr>
-					<td class="warning" id="tableRowClick" class="item">METODO:</td>
-					<td class="item"></td>
-					<td class="item"></td>
-					<td class="item"></td>
-					<td class="item"></td>
-					<td class="item"></td>
-					<td class="item" ></td>
-					<td class="item"></td>				
-				</tr>
-				<tr>
-					<td  class="warning" id="tableRowClick" class="item">FREC:</td>
-					<td class="item"></td>
-					<td class="item"></td>
-					<td class="item"></td>
-					<td class="item"></td>
-					<td class="item"></td>				
-					<td class="item"></td>	
-				</tr>
-				<tr>
-					<td class="warning" id="tableRowClick" class="item">1a. PIEZA:</td>
-					<td class="item"></td>
-					<td class="item"></td>
-					<td class="item"></td>
-					<td class="item"></td>
-					<td class="item"></td>
-					<td class="item"></td>
-					
-				</tr>
-				<tr>
-					<td class="warning" id="tableRowClick" class="item">CARACT:</td>
-					<td class="item"></td>
-					<td class="item"></td>
-					<td class="item"></td>
-					<td class="item"></td>
-					<td class="item"></td>
-					<td class="item"></td>				
-				</tr>
-				<tr>
-					<td  class="warning" id="tableRowClick" class="item"> ESPEC:</td>
-					<td class="item"></td>
-					<td class="item"></td>
-					<td class="item"></td>
-					<td class="item"></td>
-					<td class="item"></td>
-					<td class="item"></td>				
-				</tr>
-				<tr>
-					<td class="warning" id="tableRowClick" class="item">METODO:</td>
-					<td class="item"></td>
-					<td class="item"></td>
-					<td class="item"></td>
-					<td class="item"></td>
-					<td class="item" ></td>
-					<td class="item"></td>				
-				</tr>
-				<tr>
-					<td  class="warning" id="tableRowClick" class="item">FREC:</td>
-					<td class="item"></td>
-					<td class="item"></td>
-					<td class="item"></td>
-					<td class="item"></td>
-					<td class="item"></td>
-					<td class="item"></td>				
-				</tr>
+				
 			</tbody>
 				</table>
 				<!--<span>Seleccionaste:</span> <span id="select-result">ninguno</span>.-->
@@ -347,7 +210,7 @@
         			<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 			        <h4 class="modal-title">Edicion de filas</h4>
       			</div>
-      				<dKiv class="modal-footer">
+      				<div class="modal-footer">
       				<p id="index"></p>
       				<div class="row">
       					<div class="col-md-10 col-md-offset-1">

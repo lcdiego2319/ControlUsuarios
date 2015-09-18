@@ -48,7 +48,7 @@
                 <th>Estacion</th>
                 <th>Vacuum</th>
                 <th>Leak</th>
-                 <th>Acciones</th>
+              
   						</tr>
   						@foreach($rows as $item)
   						<tr data-id="{{ $item->Transaction}}">
@@ -62,10 +62,7 @@
                 <td>{{$item->Estacion}}</td>
                 <td>{{$item->Vacuum}}</td>
                 <td>{{$item->Leak}}</td>          
-                <td>
-                  <button type="button" class="btn-alert btn btn-danger btn-xs"  data-id="{{  $item->Transaction}}"  href ="" ><span  class="glyphicon glyphicon-trash" aria-hidden="true"></span>
-                  </button>
-                </td>        
+                       
   						</tr>
   						@endforeach
 					</table>

@@ -38,7 +38,7 @@ public function postLogin(LoginUserRequest $request){
 				$dias = 90 - $dias;
 				return \View::make('admin.notification_password',['dias' => $dias]);
 			}else{
-				return view('qis');
+				return view('main');
 			}
         }
         else{

@@ -15,31 +15,40 @@ function newRow()
 function createCell(cell,indice,tipo)
 {
 	var div = document.createElement('div');
-	var btn = document.createElement('button');
+	var a = document.createElement('a');
 	//btn.onclick = function(){appendRow(this)};
 	var txt = document.createTextNode("Contenido") ;
-	btn.appendChild(txt);
+	a.appendChild(txt);
 	//div.setAttribute('class',style);
 
 	if(indice == 0)//Si es la primera celda creada debera contar con el id que se active en jquery para mostrar el modal.
 	{
 		if(tipo == 1)//si es una nueva columna
 		{
-			cell.id = "tableModal";
-			cell.appendChild(txt);	
-			cell.className = "warning";
+			 var columnName = prompt("Ingresa el nombre de la columna", "");
+    		 if (columnName != null) {
+        		a.innerHTML =columnName;
+				cell.id = "tableModal";
+				a.className = "myeditable";
+				cell.appendChild(a);	
+				cell.className = "warning";
+    		}
+    		else
+    		{
+    			alert("Debes ingresar obligatoriamente un nombre a la columna!");
+    		}
 		}
 		else//si es una nueva fila
 		{
 			cell.id = "tableRowClick";
-			cell.appendChild(txt);
+			cell.appendChild(a);
 			cell.className = "warning";	
 		}
 	}
 	else
 	{
 
-	cell.appendChild(txt);
+	cell.appendChild(a);
 	cell.className = "item";
 		
 	}
