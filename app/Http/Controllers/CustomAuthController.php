@@ -28,20 +28,11 @@ public function postLogin(LoginUserRequest $request){
 	if (Auth::validate($credentials))
 	{
 		if (Auth::attempt(['usuario' => $usuario, 'password' => $password]))
-      {
-      	$update = Auth::user()->fecha_password;
-		$date_password = new Carbon($update);
-		$hoy = Carbon::now();
-		if($date_password->diff($hoy)->days >= 75 && $date_password->diff($hoy)->days < 90)//conocer si el usuario debe ser notificado para cambiar su password.
-			{
-				$dias = $date_password->diff($hoy)->days;
-				$dias = 90 - $dias;
-				return \View::make('admin.notification_password',['dias' => $dias]);
-			}else{
-				return view('main');
-			}
-        }
-        else{
+     	{
+      		return view('main');
+		}
+        else
+        {
         	return 'fallo';
         }
 	}else{

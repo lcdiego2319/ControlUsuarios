@@ -34,7 +34,7 @@
             </div>
           </div>
         </div>  
-        <div class="panel-body"  style="overflow-x:auto; font-size:11px;">
+        <div class="panel-body"  style="overflow-x:auto; font-size:11px; background-color:white">
           <table class="table table table-bordered ">
   						<tr>
              

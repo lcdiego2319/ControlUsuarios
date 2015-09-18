@@ -1,6 +1,6 @@
 @extends('navbar')
 @section('content')
-<div class="container-fluid">
+<div class="container-fluid" style="background-color:#E6E6E6">
   <div class="row">
     <div class="col-md-2 ">
        @include('admin.usuario.secciones.sidebar2')

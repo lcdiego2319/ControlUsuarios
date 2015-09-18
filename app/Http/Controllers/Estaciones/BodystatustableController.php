@@ -21,6 +21,7 @@ class BodystatustableController extends Controller {
 	{
 		///dd($request->get('SerialNumber'));
 		$rows = Bodystatus::SerialNumber($request->get('SerialNumber'))->paginate(30);//SerialNumber manda llamar a la funcion scopeSerialNumber del modelo.
+		
 		//
 		//dd($body);
 		//$bodystatus = Bodystatus::

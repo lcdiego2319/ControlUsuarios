@@ -23,7 +23,7 @@
 	<script src="{{ asset('/js/editar.js') }}"></script>
 <title>Interlocking</title>
 </head>
-<body style="background-color:#F2F2F2">
+<body>
 	<div class="container-fluid" style="z-index:100; position:absolute; top:-10px">
 	<div class="row" style="background-color: #FFBF00;">
 		<div class="col-md-4">
@@ -51,6 +51,10 @@
 				<li>
 						<a href="{{ url('goMain') }}">
 						Principal <span class="glyphicon glyphicon-home" aria-hidden="true"></span></a>
+					</li>
+					<li>
+						<a href="{{ url('goMain') }}">
+						Reportes <span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span></a>
 					</li>
 				@if(Auth::user()->tipo=='superusuario')
 					<li>
@@ -83,6 +87,16 @@
 
 </body>
 
+    <script type="text/javascript">
+         $(document).ready(function (){
+            setInterval(function(){
+            	location.reload();
+            },50000);
+          
+        });
+    </script>
+    
+ 
 
 
 </html>

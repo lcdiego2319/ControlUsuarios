@@ -1,19 +1,19 @@
 @extends('navbar')
 
 @section('content')
-<div class="container-fluid">
+<div class="container-fluid" style="background-color:#E6E6E6">
 	<div class="row">
     <div class="col-md-2">
       @include('admin.usuario.secciones.sidebar2')
     </div>
 		
-    <div class="col-md-10">
+    <div class="col-md-10" >
       <br/> <br/>
       <div class="row">
         <div class="col-md-12">
           {!! Form::model(Request::all(),['route'=>'estaciones.buscador.index', 'method'=>'GET', 'class'=>'form-group','role'=>'search'])!!}
             <div class="row">
-                <div class="col-md-12" style="text-align:center; font-size:15px;">
+                <div class="col-md-12" style="text-align:center; font-size:20px;">
                 	<b>Seleccionar la estacion y el numero de parte que deseas buscar               </b> </div>
             </div>
             <br/>

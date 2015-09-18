@@ -23,6 +23,7 @@ Route::group(['prefix' => 'administrador','middleware'=>['auth'],'namespace' => 
 });
 
 Route::group(['prefix' => 'estaciones','middleware'=>['auth'],'namespace'=>'Estaciones'],function(){
+	Route::resource('reports','ReportsController');
 	Route::resource('bodystatus','BodystatustableController');
 	Route::resource('cantilever','CantileverController');
 	Route::resource('conformal','ConformalController');
@@ -52,6 +53,7 @@ Route::post('custom_auth/login','CustomAuthController@postLogin');
 Route::get('custom_auth/logout','CustomAuthController@getLogout');
 Route::get('getMessage',['as'=>'getMessage','uses'=>'Admin\UsuarioController@goChangePassword']);
 Route::get('goMain',['as'=>'goMain','uses'=>'Admin\UsuarioController@goMain']);
+
 //Route::resource('getUsers','UsuarioController');
 
 Route::get('/', 'WelcomeController@index');
